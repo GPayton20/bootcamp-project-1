@@ -1,0 +1,55 @@
+html {
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+.button {
+  font-family: $abril;
+  letter-spacing: 1px;
+}
+
+h1 {
+  color: $white-shade;
+  font-size: 8rem;
+  line-height: 9.2rem;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-size: 2.4rem;
+}
+
+.navLink {
+  color: $white-shade;
+  font-family: $mont;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.9rem;
+  letter-spacing: 1px;
+}
+
+.button {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  line-height: 3.2rem;
+  text-align: center;
+}
+
+body {
+  color: $black;
+  font-family: $mont;
+  font-size: 2rem;
+  letter-spacing: 0px;
+  line-height: 3.2rem;
+  text-align: center;
+}
