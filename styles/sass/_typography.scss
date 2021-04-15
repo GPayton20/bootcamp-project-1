@@ -15,6 +15,7 @@ h1 {
   color: $white-shade;
   font-size: 8rem;
   line-height: 9.2rem;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -36,6 +37,8 @@ h4 {
   font-weight: 700;
   line-height: 2.9rem;
   letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .button {
@@ -43,6 +46,13 @@ h4 {
   letter-spacing: 1px;
   line-height: 3.2rem;
   text-align: center;
+}
+
+.logo {
+  color: $white-shade;
+  font-family: $abril;
+  font-size: 4rem;
+  text-transform: uppercase;
 }
 
 body {

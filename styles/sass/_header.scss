@@ -1,0 +1,30 @@
+.header {
+  height: 80vh;
+  // min-height: 700px;
+  background-color: $pine;
+  .wrapper {
+    @include flex(wrap, column, center, center);
+  }
+}
+
+.homePageHero {
+  width: 100%;
+  @include flex(nowrap, row, center, space-between);
+  .homePageHeroText {
+    position: relative;
+    img.musings {
+      width: 140px;
+    }
+    h1 {
+      position: absolute;
+      top: -40px;
+      left: 50px;
+      font-size: 14rem;
+    }
+  }
+  .imgContainer {
+    position: relative;
+    top: 50px;
+    width: 40%;
+  }
+}
