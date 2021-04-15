@@ -6,6 +6,7 @@
 
 @import 'header';
 @import 'navbar';
+@import 'article';
 
 // Utility classes
 .wrapper {
@@ -14,12 +15,7 @@
   margin: 0 auto;
 }
 
+// todo convert to mixin with $color
 .imageCutout {
   box-shadow: 20px 20px 0 #FFF;
-}
-
-// General page styles
-
-body {
-  background-color: $white-shade;
 }
