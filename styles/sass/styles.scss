@@ -6,16 +6,23 @@
 
 @import 'header';
 @import 'navbar';
-@import 'article';
+@import 'about';
 
 // Utility classes
 .wrapper {
   width: 95%;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-// todo convert to mixin with $color
-.imageCutout {
-  box-shadow: 20px 20px 0 #FFF;
+.footer {
+  span {
+    background-color: $black;
+    color: $white-shade;
+    display: block;
+    padding: 10px;
+    text-align: center;
+  }
 }
+
+

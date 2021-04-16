@@ -5,3 +5,9 @@
   align-items: $align;
   justify-content: $justify;
 }
+
+@mixin cutout {
+  position: relative;
+  right: 15px;
+  bottom: 15px;
+}

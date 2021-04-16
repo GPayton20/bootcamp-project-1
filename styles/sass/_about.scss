@@ -1,0 +1,16 @@
+.about article {
+  padding: 100px 0;
+  &:first-of-type {
+    padding-bottom: 150px;
+    text-align: center;
+  }
+  &:first-of-type,
+  &:last-of-type {
+    background-color: $white-shade;
+  }
+  .wrapper {
+    * {
+    margin: 40px;
+  }
+  }
+}
