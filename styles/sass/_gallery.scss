@@ -1,0 +1,37 @@
+.gallery .wrapper {
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+}
+
+.gallery .triptych {
+  margin: 80px 0;
+  @include flex(wrap, row, center, space-between);
+  @media (max-width: 900px) {
+    margin: 40px 0px;
+  }
+  @media (max-width: 640px) {
+    margin: 0;
+  }
+}
+
+.gallery .oneThird {
+  flex-basis: calc( (100% - 80px) / 3);
+  @media (max-width: 900px) {
+    flex-basis: calc(50% - 20px);
+  }
+  @media (max-width: 640px) {
+    @include bannerRatio;
+  }
+  &:last-of-type {
+    @media (max-width: 900px) {
+      // flex-basis: 100%;
+      // height: calc(100vw / 3.2);
+      margin-top: 40px;
+      @include bannerRatio;
+    }
+    @media (max-width: 640px) {
+      margin: 0;
+    }
+  }
+}
