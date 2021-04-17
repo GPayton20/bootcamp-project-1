@@ -1,15 +1,15 @@
 .about article {
-  padding: 100px 0;
+  padding: 80px 0;
   &:first-of-type {
-    padding-bottom: 150px;
+    padding-bottom: 120px;
     text-align: center;
   }
   &:first-of-type,
   &:last-of-type {
     background-color: $white-shade;
   }
-  .wrapper {
-    h2, h3, p, a {
+  .textContainer {
+    * {
     margin: 40px 10px;
     }
   }
@@ -27,5 +27,55 @@
   }
   .textContainer {
     width: calc(70% - 80px);
+  }
+}
+
+
+// todo 1300px breakpoint
+.about .twoByTwo article {
+  background-color: #fff;
+  padding: 0px 0;
+  @include flex(wrap, row, end, space-between);
+  &:first-of-type {
+    margin-bottom: 80px;
+  }
+  .imgContainer {
+    position: relative;
+    width: 50%;
+    &:nth-of-type(odd) {
+      box-shadow: 15px 15px $green-grey, -25vw 15px $green-grey;
+      bottom: 30px;
+    }
+    &:nth-of-type(even) {
+      box-shadow: 15px 15px $pine, 25vw 15px $pine;
+      bottom: -15px;
+    }
+  }
+  .textContainer {
+    height: 100%;
+    width: 50%;
+    &:nth-of-type(odd) {
+      // display: flex;
+      // flex-direction: column;
+      padding-right: 80px;
+      text-align: right;
+      h3 {
+        margin: 15px 0;
+      }
+      a {
+        margin: 0px 0px 90px;
+      }
+    }
+    &:nth-of-type(even) {
+      padding-left: 80px;
+      text-align: left;
+      a {
+        margin: 15px 0;
+      }
+    }
+    // *:not(a) {
+    //   margin: 0;
+    //   padding: 0;
+    // }
   }
 }

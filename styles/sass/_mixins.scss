@@ -6,6 +6,7 @@
   justify-content: $justify;
 }
 
+// todo delete if unneeded
 @mixin cutout {
   position: relative;
   right: 15px;
