@@ -9,8 +9,23 @@
     background-color: $white-shade;
   }
   .wrapper {
-    * {
-    margin: 40px;
+    h2, h3, p, a {
+    margin: 40px 10px;
+    }
   }
+}
+
+.journey .wrapper {
+  text-align: left;
+  @include flex(wrap, row, center, space-between);
+  .imgContainer {
+    margin-left: 0px;
+    width: calc(30%% - 80px);
+    img {
+      box-shadow: 15px 15px 0px $green-grey;
+    }
+  }
+  .textContainer {
+    width: calc(70% - 80px);
   }
 }
