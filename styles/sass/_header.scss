@@ -43,13 +43,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   .wrapper {
-    height: 100%;
+    height: calc(100% - 70px);
     position: relative;
     h1 {
       color: $white-shade;
+      margin: 0;
       position: absolute;
       left: 0;
-      bottom: 0;
+      bottom: -1.7rem;
     }
   }
 }

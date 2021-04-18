@@ -1,0 +1,25 @@
+.contactForm {
+  @include flex(wrap, row, center, space-between);
+  input[type="text"],
+  textarea {
+    border: none;
+    &:active,
+    &:focus, {
+      outline: 2px solid $pine;
+    }
+  }
+  input[type="text"] {
+    flex-basis: calc(50% - 10px);
+    padding: 20px;
+  }
+  textarea {
+    // border: none;
+    flex-basis: 100%;
+    margin: 25px 0;
+    padding: 20px;
+    resize: none;
+  }
+  button[type="submit"] {
+    flex-basis: 100%;
+  }
+}

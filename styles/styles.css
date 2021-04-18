@@ -262,7 +262,8 @@ h1,
 h2,
 h3,
 h4,
-.button {
+.button,
+button[type="submit"] {
   font-family: "Abril Fatface", cursive;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -304,7 +305,8 @@ a {
   text-transform: uppercase;
 }
 
-.button {
+.button,
+button[type="submit"] {
   border: 2px solid #E4A436;
   background-color: #E4A436;
   color: #1F1F1F;
@@ -318,7 +320,9 @@ a {
   transition: all 0.3s ease;
 }
 
-.button:hover, .button:focus {
+.button:hover, .button:focus,
+button[type="submit"]:hover,
+button[type="submit"]:focus {
   border-color: #1F1F1F;
 }
 
@@ -416,16 +420,17 @@ body {
 
 .header.blogHeader .wrapper,
 .header.contactHeader .wrapper {
-  height: 100%;
+  height: calc(100% - 70px);
   position: relative;
 }
 
 .header.blogHeader .wrapper h1,
 .header.contactHeader .wrapper h1 {
   color: #F6F6F6;
+  margin: 0;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1.7rem;
 }
 
 .header.blogHeader {
@@ -444,7 +449,7 @@ body {
   list-style: none;
   margin: 0 auto;
   padding: 15px 0px;
-  width: 50%;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -457,14 +462,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .navBar ul a {
   display: inline-block;
-  padding: 0px 30px;
+  padding: 0px 40px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
@@ -719,6 +724,54 @@ body {
   position: absolute;
   top: 30px;
   left: 0;
+}
+
+.contactForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contactForm input[type="text"],
+.contactForm textarea {
+  border: none;
+}
+
+.contactForm input[type="text"]:active, .contactForm input[type="text"]:focus,
+.contactForm textarea:active,
+.contactForm textarea:focus {
+  outline: 2px solid #345231;
+}
+
+.contactForm input[type="text"] {
+  -ms-flex-preferred-size: calc(50% - 10px);
+      flex-basis: calc(50% - 10px);
+  padding: 20px;
+}
+
+.contactForm textarea {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin: 25px 0;
+  padding: 20px;
+  resize: none;
+}
+
+.contactForm button[type="submit"] {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 .wrapper {

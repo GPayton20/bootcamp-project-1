@@ -6,7 +6,8 @@ h1,
 h2,
 h3,
 h4,
-.button {
+.button,
+button[type="submit"] {
   font-family: $abril;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -49,7 +50,8 @@ a {
   text-transform: uppercase;
 }
 
-.button {
+.button,
+button[type="submit"] {
   border: 2px solid $accent;
   background-color: $accent;
   color: $black;
