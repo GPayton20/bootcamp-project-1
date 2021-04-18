@@ -24,12 +24,18 @@ h2 {
   font-size: 4.2rem;
 }
 
+// todo pair this with pageLinks anchors, replace <h3>s in that section
 h3 {
   font-size: 3.2rem;
 }
 
 h4 {
   font-size: 2.4rem;
+}
+
+p a {
+  color: $pine;
+  text-decoration: none;
 }
 
 .navLink {
