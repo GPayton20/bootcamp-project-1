@@ -39,6 +39,10 @@ a {
   text-decoration: none;
 }
 
+.blogPost {
+  text-align: left;
+}
+
 .navLink {
   color: $white-shade;
   font-family: $mont;
@@ -86,4 +90,8 @@ body {
   letter-spacing: 0px;
   line-height: 3.2rem;
   text-align: center;
+}
+
+aside {
+  text-align: left;
 }

@@ -294,6 +294,10 @@ a {
   text-decoration: none;
 }
 
+.blogPost {
+  text-align: left;
+}
+
 .navLink {
   color: #F6F6F6;
   font-family: "Montserrat", sans-serif;
@@ -344,6 +348,10 @@ body {
   letter-spacing: 0px;
   line-height: 3.2rem;
   text-align: center;
+}
+
+aside {
+  text-align: left;
 }
 
 .header {
