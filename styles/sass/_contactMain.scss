@@ -4,6 +4,9 @@
   @media (max-width: 1050px) {
     padding: 60px 0;
   }
+  @media (max-width: 580px) {
+    padding: 30px 0;
+  }
   .wrapper {
      @include flex(wrap, row-reverse, start, space-between);
   }

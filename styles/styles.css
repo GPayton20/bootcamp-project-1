@@ -451,6 +451,14 @@ aside {
   bottom: -1.7rem;
 }
 
+@media (max-width: 580px) {
+  .header.blogHeader .wrapper h1,
+  .header.contactHeader .wrapper h1 {
+    font-size: 7rem;
+    bottom: -2rem;
+  }
+}
+
 .header.blogHeader {
   background-image: url(../assets/blog-image-1.jpg);
 }
@@ -883,7 +891,7 @@ aside {
 .contactForm input[type="text"]:active, .contactForm input[type="text"]:focus,
 .contactForm textarea:active,
 .contactForm textarea:focus {
-  outline: 2px solid #345231;
+  outline: 2px solid #709B6B;
 }
 
 .contactForm input[type="text"],
@@ -923,6 +931,12 @@ aside {
 @media (max-width: 1050px) {
   .mainContact {
     padding: 60px 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .mainContact {
+    padding: 30px 0;
   }
 }
 
