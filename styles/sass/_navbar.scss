@@ -1,8 +1,10 @@
 .navBar {
-  width: 70%;
+  background-color: $pine;
   ul {
     list-style: none;
+    margin: 0 auto;
     padding: 15px 0px;
+    width: 50%;
     @include flex(nowrap, row, center, space-between);
     a {
       display: inline-block;
