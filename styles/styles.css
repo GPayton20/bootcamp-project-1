@@ -821,6 +821,16 @@ aside {
   margin: 0;
 }
 
+.asides .aboutWillow h4,
+.asides .aboutWillow p {
+  margin-top: 20px;
+}
+
+.asides .recentPosts ul {
+  margin-top: 20px;
+  list-style-position: inside;
+}
+
 .contactForm {
   display: -webkit-box;
   display: -ms-flexbox;

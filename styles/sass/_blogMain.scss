@@ -45,3 +45,18 @@
     }
   }
 }
+
+.asides {
+  .aboutWillow {
+    h4,
+    p {
+      margin-top: 20px;
+    }
+  }
+  .recentPosts {
+    ul {
+      margin-top: 20px;
+      list-style-position: inside;
+    }
+  }
+}
