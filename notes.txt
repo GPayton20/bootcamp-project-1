@@ -24,7 +24,6 @@ General styles and notes
 
 - Gallery can be done either flexbox or inline-block
 
-- Link icons are purely stylistic, can be done as pseudo-elements
 
 Blog Styles
 
@@ -36,3 +35,6 @@ Contact Styles
 
 - form styles can be reused
 - social media icons must be accessible
+
+
+Banner loses 80px of height between 900px and 640px (difference of 260px)

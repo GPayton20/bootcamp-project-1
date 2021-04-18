@@ -299,6 +299,7 @@ h4 {
 }
 
 .button {
+  border: 2px solid #E4A436;
   background-color: #E4A436;
   color: #1F1F1F;
   font-size: 2rem;
@@ -307,6 +308,12 @@ h4 {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.button:hover, .button:focus {
+  border-color: #1F1F1F;
 }
 
 .logo {
@@ -424,7 +431,7 @@ body {
   transition: color 0.3s ease;
 }
 
-.navBar ul a:hover {
+.navBar ul a:hover, .navBar ul a:focus {
   color: #E4A436;
 }
 
@@ -616,6 +623,64 @@ body {
   .gallery .oneThird:last-of-type {
     margin: 0;
   }
+}
+
+.pageLinks {
+  background-color: #F6F6F6;
+  padding: 80px 0;
+}
+
+@media (max-width: 700px) {
+  .pageLinks {
+    padding: 40px 0;
+  }
+}
+
+.pageLinks .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pageLinks .linkContainer {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  padding: 40px 10px 40px 80px;
+  position: relative;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .pageLinks .linkContainer {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.pageLinks .linkContainer p {
+  padding: 20px 0;
+}
+
+.pageLinks i.fas {
+  background-color: #E4A436;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  padding: 15px;
+  position: absolute;
+  top: 30px;
+  left: 0;
 }
 
 .wrapper {

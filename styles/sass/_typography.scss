@@ -43,6 +43,7 @@ h4 {
 }
 
 .button {
+  border: 2px solid $accent;
   background-color: $accent;
   color: $black;
   font-size: 2rem;
@@ -51,6 +52,11 @@ h4 {
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover,
+  &:focus {
+    border-color: $black;
+  }
 }
 
 .logo {

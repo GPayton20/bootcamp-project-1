@@ -1,0 +1,34 @@
+.pageLinks {
+  background-color: $white-shade;
+  padding: 80px 0;
+  @media (max-width: 700px) {
+    padding: 40px 0;
+  }
+  .wrapper {
+    @include flex(wrap, row, flex-start, space-between);
+  }
+}
+
+.pageLinks .linkContainer {
+  flex-basis: 50%;
+  padding: 40px 10px 40px 80px;
+  position: relative;
+  text-align: left;
+  @media (max-width: 700px) {
+    flex-basis: 100%;
+  }
+  p {
+    padding: 20px 0;
+  }
+}
+
+.pageLinks i.fas {
+  background-color: $accent;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  padding: 15px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+// todo is textContainer class needed here?
