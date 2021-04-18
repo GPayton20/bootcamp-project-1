@@ -1,4 +1,47 @@
 .mainBlog {
   background-color: $white-shade;
   padding: 100px 0;
+  .wrapper {
+    @include flex(wrap, row-reverse, start, space-between);
+    .blogSection {
+      flex-basis: calc(70% - 20px);
+    }
+    .asides {
+      flex-basis: calc(30% - 20px);
+
+    }
+  }
+}
+
+.mainBlog .blogPost,
+.mainBlog aside {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 40px;
+}
+
+.mainBlog {
+  .blogPost {
+    &:nth-of-type(odd) {
+      border-bottom: 5px solid $green-grey;
+    }
+    span.byline,
+    p {
+      display: block;
+      margin-top: 20px;
+    }
+  }
+  .blogPost.postSmall {
+    @include flex(wrap, row, start, space-between);
+    img {
+      flex-basis: calc(15% - 10px);
+    }
+    .textContainer {
+      flex-basis: calc(85% - 10px);
+    }
+    span.byline,
+    p {
+      margin: 0;
+    }
+  }
 }
