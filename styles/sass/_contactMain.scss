@@ -1,0 +1,31 @@
+.mainContact {
+  background-color: $white-shade;
+  padding: 100px 0;
+  .wrapper {
+     @include flex(wrap, row-reverse, start, space-between);
+  }
+  .contactForm {
+    flex-basis: calc(70% - 20px);
+  }
+  .contactInfo {
+    background-color: #fff;
+    flex-basis: calc(30% - 20px);
+    padding: 40px 20px;
+    ul {
+      font-size: 3.5rem;
+      list-style: none;
+      margin-left: -10px;
+      @include flex(nowrap, row, center, start);
+      a {
+        padding: 0 15px;
+      }
+    }
+    .email {
+      padding: 20px 0;
+    }
+    span {
+      display: block;
+      text-align: left;
+    }
+  }
+}

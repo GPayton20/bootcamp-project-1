@@ -326,6 +326,10 @@ button[type="submit"]:focus {
   border-color: #1F1F1F;
 }
 
+.email {
+  font-weight: bold;
+}
+
 .logo {
   color: #F6F6F6;
   font-family: "Abril Fatface", cursive;
@@ -772,6 +776,75 @@ body {
 .contactForm button[type="submit"] {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+}
+
+.mainContact {
+  background-color: #F6F6F6;
+  padding: 100px 0;
+}
+
+.mainContact .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainContact .contactForm {
+  -ms-flex-preferred-size: calc(70% - 20px);
+      flex-basis: calc(70% - 20px);
+}
+
+.mainContact .contactInfo {
+  background-color: #fff;
+  -ms-flex-preferred-size: calc(30% - 20px);
+      flex-basis: calc(30% - 20px);
+  padding: 40px 20px;
+}
+
+.mainContact .contactInfo ul {
+  font-size: 3.5rem;
+  list-style: none;
+  margin-left: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.mainContact .contactInfo ul a {
+  padding: 0 15px;
+}
+
+.mainContact .contactInfo .email {
+  padding: 20px 0;
+}
+
+.mainContact .contactInfo span {
+  display: block;
+  text-align: left;
 }
 
 .wrapper {
