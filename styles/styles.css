@@ -292,6 +292,12 @@ h4 {
 a {
   color: #345231;
   text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+a:active, a:focus, a:hover {
+  color: #709B6B;
 }
 
 .blogPost {
@@ -455,18 +461,12 @@ aside {
 
 .navBar {
   background-color: #345231;
-}
-
-.navBar ul {
-  list-style: none;
-  margin: 0 auto;
-  padding: 15px 0px;
-  width: 70%;
+  height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -479,9 +479,35 @@ aside {
           justify-content: center;
 }
 
+.navBar ul {
+  list-style: none;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+  .navBar ul {
+    width: 70%;
+  }
+}
+
 .navBar ul a {
   display: inline-block;
-  padding: 0px 40px;
+  padding: 15px 10px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
@@ -860,10 +886,20 @@ aside {
   outline: 2px solid #345231;
 }
 
-.contactForm input[type="text"] {
+.contactForm input[type="text"],
+.contactForm input[type="email"] {
   -ms-flex-preferred-size: calc(50% - 10px);
       flex-basis: calc(50% - 10px);
   padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .contactForm input[type="text"],
+  .contactForm input[type="email"] {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-top: 25px;
+  }
 }
 
 .contactForm textarea {
@@ -882,6 +918,12 @@ aside {
 .mainContact {
   background-color: #F6F6F6;
   padding: 100px 0;
+}
+
+@media (max-width: 1050px) {
+  .mainContact {
+    padding: 60px 0;
+  }
 }
 
 .mainContact .wrapper {
@@ -907,11 +949,61 @@ aside {
       flex-basis: calc(70% - 20px);
 }
 
+@media (max-width: 1050px) {
+  .mainContact .contactForm {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
 .mainContact .contactInfo {
   background-color: #fff;
   -ms-flex-preferred-size: calc(30% - 20px);
       flex-basis: calc(30% - 20px);
   padding: 40px 20px;
+}
+
+@media (max-width: 1050px) {
+  .mainContact .contactInfo {
+    margin-top: 20px;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media (max-width: 825px) {
+  .mainContact .contactInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .mainContact .contactInfo ul {
@@ -937,6 +1029,12 @@ aside {
 
 .mainContact .contactInfo ul a {
   padding: 0 15px;
+}
+
+@media (max-width: 825px) {
+  .mainContact .contactInfo ul a {
+    font-size: 5rem;
+  }
 }
 
 .mainContact .contactInfo .email {

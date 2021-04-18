@@ -37,6 +37,12 @@ h4 {
 a {
   color: $pine;
   text-decoration: none;
+  transition: color 0.3s ease;
+  &:active,
+  &:focus,
+  &:hover {
+    color: $green-grey;
+  }
 }
 
 .blogPost {
