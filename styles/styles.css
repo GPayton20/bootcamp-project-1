@@ -300,7 +300,8 @@ a:active, a:focus, a:hover {
   color: #709B6B;
 }
 
-.blogPost {
+.blogPost,
+.commentPost {
   text-align: left;
 }
 
@@ -821,8 +822,8 @@ aside {
 }
 
 .mainBlog .wrapper .blogSection {
-  -ms-flex-preferred-size: calc(70% - 20px);
-      flex-basis: calc(70% - 20px);
+  -ms-flex-preferred-size: calc(65% - 20px);
+      flex-basis: calc(65% - 20px);
 }
 
 @media (max-width: 775px) {
@@ -833,8 +834,8 @@ aside {
 }
 
 .mainBlog .wrapper .asides {
-  -ms-flex-preferred-size: calc(30% - 20px);
-      flex-basis: calc(30% - 20px);
+  -ms-flex-preferred-size: calc(35% - 20px);
+      flex-basis: calc(35% - 20px);
 }
 
 @media (max-width: 775px) {
@@ -845,10 +846,19 @@ aside {
 }
 
 .mainBlog .blogPost,
+.mainBlog .commentPost,
 .mainBlog aside {
   background-color: #fff;
   margin-bottom: 20px;
   padding: 40px;
+}
+
+@media (max-width: 700px) {
+  .mainBlog .blogPost,
+  .mainBlog .commentPost,
+  .mainBlog aside {
+    padding: 20px;
+  }
 }
 
 .mainBlog .blogPost:nth-of-type(odd) {
@@ -861,7 +871,7 @@ aside {
   margin-top: 20px;
 }
 
-.mainBlog .blogPost.postSmall {
+.mainBlog .commentPost {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -879,18 +889,36 @@ aside {
           justify-content: space-between;
 }
 
-.mainBlog .blogPost.postSmall img {
+.mainBlog .commentPost:nth-of-type(odd) {
+  border-bottom: 5px solid #709B6B;
+}
+
+.mainBlog .commentPost img {
   -ms-flex-preferred-size: calc(15% - 10px);
       flex-basis: calc(15% - 10px);
 }
 
-.mainBlog .blogPost.postSmall .textContainer {
+@media (max-width: 700px) {
+  .mainBlog .commentPost img {
+    -ms-flex-preferred-size: calc(25% - 15px);
+        flex-basis: calc(25% - 15px);
+  }
+}
+
+.mainBlog .commentPost .textContainer {
   -ms-flex-preferred-size: calc(85% - 10px);
       flex-basis: calc(85% - 10px);
 }
 
-.mainBlog .blogPost.postSmall span.byline,
-.mainBlog .blogPost.postSmall p {
+@media (max-width: 700px) {
+  .mainBlog .commentPost .textContainer {
+    -ms-flex-preferred-size: calc(75% - 15px);
+        flex-basis: calc(75% - 15px);
+  }
+}
+
+.mainBlog .commentPost span.byline,
+.mainBlog .commentPost p {
   margin: 0;
 }
 
@@ -908,6 +936,7 @@ aside {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin: 20px 0;
   }
 }
 

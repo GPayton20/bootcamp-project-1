@@ -10,13 +10,13 @@
   .wrapper {
     @include flex(wrap, row-reverse, start, space-between);
     .blogSection {
-      flex-basis: calc(70% - 20px);
+      flex-basis: calc(65% - 20px);
       @media (max-width: 775px) {
         flex-basis: 100%;
       }
     }
     .asides {
-      flex-basis: calc(30% - 20px);
+      flex-basis: calc(35% - 20px);
       @media (max-width: 775px) {
         flex-basis: 100%;
       }
@@ -33,10 +33,14 @@
 
 
 .mainBlog .blogPost,
+.mainBlog .commentPost,
 .mainBlog aside {
   background-color: #fff;
   margin-bottom: 20px;
   padding: 40px;
+  @media (max-width: 700px) {
+    padding: 20px;
+  }
 }
 
 .mainBlog {
@@ -50,13 +54,22 @@
       margin-top: 20px;
     }
   }
-  .blogPost.postSmall {
+  .commentPost {
     @include flex(wrap, row, start, space-between);
+    &:nth-of-type(odd) {
+      border-bottom: 5px solid $green-grey;
+    }
     img {
       flex-basis: calc(15% - 10px);
+      @media (max-width: 700px) {
+        flex-basis: calc(25% - 15px);
+      }
     }
     .textContainer {
       flex-basis: calc(85% - 10px);
+      @media (max-width: 700px) {
+        flex-basis: calc(75% - 15px);
+      }
     }
     span.byline,
     p {
@@ -76,6 +89,7 @@
     }
     @media (max-width: 775px) and (min-width: 580px) {
       display: flex;
+      margin: 20px 0;
     }
     .textContainer {
       @media (max-width: 775px) and (min-width: 580px){
