@@ -777,6 +777,18 @@ aside {
   padding: 100px 0;
 }
 
+@media (max-width: 1050px) {
+  .mainBlog {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 580px) {
+  .mainBlog {
+    padding: 30px 0;
+  }
+}
+
 .mainBlog .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -800,9 +812,23 @@ aside {
       flex-basis: calc(70% - 20px);
 }
 
+@media (max-width: 775px) {
+  .mainBlog .wrapper .blogSection {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
 .mainBlog .wrapper .asides {
   -ms-flex-preferred-size: calc(30% - 20px);
       flex-basis: calc(30% - 20px);
+}
+
+@media (max-width: 775px) {
+  .mainBlog .wrapper .asides {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 
 .mainBlog .blogPost,
@@ -860,6 +886,24 @@ aside {
   margin-top: 20px;
 }
 
+.asides .aboutWillow a {
+  padding: 0;
+}
+
+@media (max-width: 775px) and (min-width: 580px) {
+  .asides .aboutWillow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 775px) and (min-width: 580px) {
+  .asides .aboutWillow .textContainer {
+    padding: 20px;
+  }
+}
+
 .asides .recentPosts ul {
   margin-top: 20px;
   list-style-position: inside;
@@ -901,7 +945,7 @@ aside {
   padding: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 775px) {
   .contactForm input[type="text"],
   .contactForm input[type="email"] {
     -ms-flex-preferred-size: 100%;
