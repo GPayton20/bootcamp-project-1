@@ -412,7 +412,7 @@ aside {
 
 @media (max-width: 960px) {
   .homePageHero .homePageHeroText {
-    top: calc(-25px - 16vw);
+    top: calc(-10px - 16vw);
   }
 }
 
@@ -507,6 +507,7 @@ aside {
 .navBar {
   background-color: #345231;
   height: 70px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -527,6 +528,30 @@ aside {
 @media (max-width: 700px) {
   .navBar {
     height: 50px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+  }
+}
+
+.navBar input.hamburger {
+  display: none;
+}
+
+.navBar input.hamburger + label {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  color: #F6F6F6;
+  font-size: 4rem;
+}
+
+@media (max-width: 700px) {
+  .navBar input.hamburger + label {
+    display: block;
   }
 }
 
@@ -562,6 +587,34 @@ aside {
   }
 }
 
+@media (max-width: 700px) {
+  .navBar ul {
+    background-color: #345231;
+    height: calc(100vh - 50px);
+    width: 300px;
+    max-width: 70%;
+    position: fixed;
+    top: 50px;
+    right: 0px;
+    z-index: 30;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}
+
 .navBar ul a {
   display: inline-block;
   padding: 15px 10px;
@@ -571,6 +624,18 @@ aside {
 
 .navBar ul a:hover, .navBar ul a:focus {
   color: #E4A436;
+}
+
+@media (max-width: 700px) {
+  .navBar ul a {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .navBar ul span.logo {
+    display: none;
+  }
 }
 
 .about article {
