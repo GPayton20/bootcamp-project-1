@@ -1,5 +1,8 @@
 .about article {
   padding: 80px 0;
+  @media (max-width: 800px) {
+    padding: 40px 0;
+  }
   &:first-of-type {
     padding-bottom: 120px;
     text-align: center;
@@ -11,6 +14,9 @@
   .textContainer {
     * {
     margin: 40px 10px;
+    @media (max-width: 800px) {
+      margin: 20px 0;
+    }
     }
   }
 }
@@ -18,30 +24,46 @@
 .journey .wrapper {
   text-align: left;
   @include flex(nowrap, row, center, space-between);
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
   .imgContainer {
     margin-left: 0px;
-    width: calc(30%% - 80px);
+    width: calc(30% - 80px);
+    @media (max-width: 800px) {
+      margin: 50px 0;
+      width: 55%;
+    }
     img {
       box-shadow: 15px 15px 0px $green-grey;
     }
   }
   .textContainer {
     width: calc(70% - 80px);
+    @media (max-width: 800px) {
+      width: calc(100% - 20px);
+    }
   }
 }
 
 
-// todo 1300px breakpoint
+
 .about .twoByTwo article {
   background-color: #fff;
   padding: 0px 0;
   @include flex(wrap, row, end, space-between);
   &:first-of-type {
     margin-bottom: 80px;
+    @media (max-width: 800px) {
+      margin-bottom: 0px;
+    }
   }
   .imgContainer {
     position: relative;
-    width: 50%;
+    flex-basis: 50%;
+    @media (max-width: 800px) {
+      flex-basis: 100%;
+    }
     &:nth-of-type(odd) {
       box-shadow: 15px 15px $green-grey, -25vw 15px $green-grey;
       bottom: 30px;
@@ -53,20 +75,32 @@
   }
   .textContainer {
     height: 100%;
-    width: 50%;
+    flex-basis: 50%;
+    @media (max-width: 800px) {
+      flex-basis: 100%;
+    }
     &:nth-of-type(odd) {
       padding-right: 80px;
       text-align: right;
+      @media (max-width: 800px) {
+        padding-right: 0px;
+      }
       h3 {
         margin: 15px 0;
       }
       a {
         margin: 0px 0px 90px;
+        @media (max-width: 800px) {
+          margin: 0px 0px 40px;
+        }
       }
     }
     &:nth-of-type(even) {
       padding-left: 80px;
       text-align: left;
+      @media (max-width: 750px) {
+        padding-left: 0px;
+      }
       a {
         margin: 15px 0;
       }

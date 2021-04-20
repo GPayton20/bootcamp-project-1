@@ -21,6 +21,7 @@
     flex-basis: calc(50% - 20px);
   }
   @media (max-width: 640px) {
+    margin-top: 20px;
     @include bannerRatio;
   }
   &:last-of-type {
@@ -31,7 +32,8 @@
       @include bannerRatio;
     }
     @media (max-width: 640px) {
-      margin: 0;
+      margin-top: 20px;
+      // margin: 0;
     }
   }
 }

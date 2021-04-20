@@ -331,10 +331,12 @@ button[type="submit"] {
   transition: all 0.3s ease;
 }
 
-.button:hover, .button:focus,
+.button:active, .button:hover, .button:focus,
+button[type="submit"]:active,
 button[type="submit"]:hover,
 button[type="submit"]:focus {
   border-color: #1F1F1F;
+  color: #1F1F1F;
 }
 
 .email {
@@ -542,6 +544,12 @@ aside {
   padding: 80px 0;
 }
 
+@media (max-width: 800px) {
+  .about article {
+    padding: 40px 0;
+  }
+}
+
 .about article:first-of-type {
   padding-bottom: 120px;
   text-align: center;
@@ -553,6 +561,12 @@ aside {
 
 .about article .textContainer * {
   margin: 40px 10px;
+}
+
+@media (max-width: 800px) {
+  .about article .textContainer * {
+    margin: 20px 0;
+  }
 }
 
 .journey .wrapper {
@@ -574,9 +588,25 @@ aside {
           justify-content: space-between;
 }
 
+@media (max-width: 800px) {
+  .journey .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .journey .wrapper .imgContainer {
   margin-left: 0px;
-  width: calc(30%% - 80px);
+  width: calc(30% - 80px);
+}
+
+@media (max-width: 800px) {
+  .journey .wrapper .imgContainer {
+    margin: 50px 0;
+    width: 55%;
+  }
 }
 
 .journey .wrapper .imgContainer img {
@@ -586,6 +616,12 @@ aside {
 
 .journey .wrapper .textContainer {
   width: calc(70% - 80px);
+}
+
+@media (max-width: 800px) {
+  .journey .wrapper .textContainer {
+    width: calc(100% - 20px);
+  }
 }
 
 .about .twoByTwo article {
@@ -612,9 +648,23 @@ aside {
   margin-bottom: 80px;
 }
 
+@media (max-width: 800px) {
+  .about .twoByTwo article:first-of-type {
+    margin-bottom: 0px;
+  }
+}
+
 .about .twoByTwo article .imgContainer {
   position: relative;
-  width: 50%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+@media (max-width: 800px) {
+  .about .twoByTwo article .imgContainer {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 
 .about .twoByTwo article .imgContainer:nth-of-type(odd) {
@@ -631,12 +681,26 @@ aside {
 
 .about .twoByTwo article .textContainer {
   height: 100%;
-  width: 50%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+@media (max-width: 800px) {
+  .about .twoByTwo article .textContainer {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }
 
 .about .twoByTwo article .textContainer:nth-of-type(odd) {
   padding-right: 80px;
   text-align: right;
+}
+
+@media (max-width: 800px) {
+  .about .twoByTwo article .textContainer:nth-of-type(odd) {
+    padding-right: 0px;
+  }
 }
 
 .about .twoByTwo article .textContainer:nth-of-type(odd) h3 {
@@ -647,9 +711,21 @@ aside {
   margin: 0px 0px 90px;
 }
 
+@media (max-width: 800px) {
+  .about .twoByTwo article .textContainer:nth-of-type(odd) a {
+    margin: 0px 0px 40px;
+  }
+}
+
 .about .twoByTwo article .textContainer:nth-of-type(even) {
   padding-left: 80px;
   text-align: left;
+}
+
+@media (max-width: 750px) {
+  .about .twoByTwo article .textContainer:nth-of-type(even) {
+    padding-left: 0px;
+  }
 }
 
 .about .twoByTwo article .textContainer:nth-of-type(even) a {
@@ -707,6 +783,7 @@ aside {
 
 @media (max-width: 640px) {
   .gallery .oneThird {
+    margin-top: 20px;
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     height: calc(100vw / 3.2);
@@ -724,7 +801,7 @@ aside {
 
 @media (max-width: 640px) {
   .gallery .oneThird:last-of-type {
-    margin: 0;
+    margin-top: 20px;
   }
 }
 
