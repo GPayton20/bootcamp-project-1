@@ -410,8 +410,20 @@ aside {
   z-index: 20;
 }
 
+@media (max-width: 960px) {
+  .homePageHero .homePageHeroText {
+    top: calc(-25px - 16vw);
+  }
+}
+
 .homePageHero .homePageHeroText img.musings {
   width: 140px;
+}
+
+@media (max-width: 960px) {
+  .homePageHero .homePageHeroText img.musings {
+    width: 18vw;
+  }
 }
 
 .homePageHero .homePageHeroText h1 {
@@ -419,6 +431,13 @@ aside {
   top: -40px;
   left: 50px;
   font-size: 14rem;
+}
+
+@media (max-width: 960px) {
+  .homePageHero .homePageHeroText h1 {
+    left: 6vw;
+    font-size: 18vw;
+  }
 }
 
 .homePageHero .imgContainer {
@@ -431,6 +450,12 @@ aside {
   top: 50px;
   width: 70%;
   max-width: 500px;
+}
+
+@media (max-width: 960px) {
+  .homePageHero .imgContainer {
+    top: 3vw;
+  }
 }
 
 .header.blogHeader,
@@ -497,6 +522,12 @@ aside {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .navBar {
+    height: 50px;
+  }
 }
 
 .navBar ul {

@@ -14,14 +14,25 @@
     padding-bottom: 50px;
     position: relative;
     z-index: 20;
+    @media (max-width: 960px) {
+      top: calc(-25px - 16vw);
+    }
     img.musings {
       width: 140px;
+      @media (max-width: 960px) {
+        width: 18vw;
+      }
     }
     h1 {
       position: absolute;
       top: -40px;
       left: 50px;
       font-size: 14rem;
+      @media (max-width: 960px) {
+        // top: 7vw;
+        left: 6vw;
+        font-size: 18vw;
+      }
     }
   }
   .imgContainer {
@@ -33,7 +44,9 @@
     top: 50px;
     width: 70%;
     max-width: 500px;
-    // 960px breakpoint
+    @media (max-width: 960px) {
+      top: 3vw;
+    }
   }
 }
 
