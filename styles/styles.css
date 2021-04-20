@@ -412,7 +412,7 @@ aside {
 
 @media (max-width: 960px) {
   .homePageHero .homePageHeroText {
-    top: calc(-10px - 16vw);
+    top: -16vw;
   }
 }
 
@@ -422,7 +422,7 @@ aside {
 
 @media (max-width: 960px) {
   .homePageHero .homePageHeroText img.musings {
-    width: 18vw;
+    width: 17vw;
   }
 }
 
@@ -488,7 +488,7 @@ aside {
   bottom: -1.7rem;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 700px) {
   .header.blogHeader .wrapper h1,
   .header.contactHeader .wrapper h1 {
     font-size: 7rem;
@@ -527,7 +527,7 @@ aside {
 
 @media (max-width: 700px) {
   .navBar {
-    height: 50px;
+    height: 60px;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -546,7 +546,7 @@ aside {
   top: 5px;
   right: 20px;
   color: #F6F6F6;
-  font-size: 4rem;
+  font-size: 4.5rem;
 }
 
 @media (max-width: 700px) {
@@ -1180,7 +1180,7 @@ aside {
   padding: 20px;
 }
 
-@media (max-width: 775px) {
+@media (max-width: 850px) {
   .contactForm input[type="text"],
   .contactForm input[type="email"] {
     -ms-flex-preferred-size: 100%;

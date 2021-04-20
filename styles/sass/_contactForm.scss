@@ -12,7 +12,7 @@
   input[type="email"] {
     flex-basis: calc(50% - 10px);
     padding: 20px;
-    @media (max-width: 775px) {
+    @media (max-width: 850px) {
       flex-basis: 100%;
       margin-top: 25px;
     }
