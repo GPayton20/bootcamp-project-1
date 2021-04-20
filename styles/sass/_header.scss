@@ -13,6 +13,7 @@
   .homePageHeroText {
     padding-bottom: 50px;
     position: relative;
+    z-index: 20;
     img.musings {
       width: 140px;
     }
@@ -30,8 +31,9 @@
     margin-right: 15px;
     position: relative;
     top: 50px;
-    width: 500px;
-    // 1275px breakpoint
+    width: 70%;
+    max-width: 500px;
+    // 960px breakpoint
   }
 }
 

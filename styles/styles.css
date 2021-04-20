@@ -407,6 +407,7 @@ aside {
 .homePageHero .homePageHeroText {
   padding-bottom: 50px;
   position: relative;
+  z-index: 20;
 }
 
 .homePageHero .homePageHeroText img.musings {
@@ -428,7 +429,8 @@ aside {
   margin-right: 15px;
   position: relative;
   top: 50px;
-  width: 500px;
+  width: 70%;
+  max-width: 500px;
 }
 
 .header.blogHeader,
@@ -546,7 +548,7 @@ aside {
 
 @media (max-width: 800px) {
   .about article {
-    padding: 40px 0;
+    padding: 80px 0 40px;
   }
 }
 
@@ -565,7 +567,7 @@ aside {
 
 @media (max-width: 800px) {
   .about article .textContainer * {
-    margin: 20px 0;
+    margin: 30px 0;
   }
 }
 
@@ -599,7 +601,8 @@ aside {
 
 .journey .wrapper .imgContainer {
   margin-left: 0px;
-  width: calc(30% - 80px);
+  width: calc(30% - 40px);
+  min-width: 300px;
 }
 
 @media (max-width: 800px) {
@@ -615,7 +618,7 @@ aside {
 }
 
 .journey .wrapper .textContainer {
-  width: calc(70% - 80px);
+  width: calc(70% - 100px);
 }
 
 @media (max-width: 800px) {
@@ -650,7 +653,7 @@ aside {
 
 @media (max-width: 800px) {
   .about .twoByTwo article:first-of-type {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
   }
 }
 
@@ -846,6 +849,7 @@ aside {
   .pageLinks .linkContainer {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+    padding: 20px 10px 20px 80px;
   }
 }
 
@@ -861,6 +865,12 @@ aside {
   position: absolute;
   top: 30px;
   left: 0;
+}
+
+@media (max-width: 700px) {
+  .pageLinks i.fas {
+    top: 10px;
+  }
 }
 
 .mainBlog {

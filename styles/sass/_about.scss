@@ -1,7 +1,7 @@
 .about article {
   padding: 80px 0;
   @media (max-width: 800px) {
-    padding: 40px 0;
+    padding: 80px 0 40px;
   }
   &:first-of-type {
     padding-bottom: 120px;
@@ -15,7 +15,7 @@
     * {
     margin: 40px 10px;
     @media (max-width: 800px) {
-      margin: 20px 0;
+      margin: 30px 0;
     }
     }
   }
@@ -29,7 +29,8 @@
   }
   .imgContainer {
     margin-left: 0px;
-    width: calc(30% - 80px);
+    width: calc(30% - 40px);
+    min-width: 300px;
     @media (max-width: 800px) {
       margin: 50px 0;
       width: 55%;
@@ -39,7 +40,7 @@
     }
   }
   .textContainer {
-    width: calc(70% - 80px);
+    width: calc(70% - 100px);
     @media (max-width: 800px) {
       width: calc(100% - 20px);
     }
@@ -55,7 +56,7 @@
   &:first-of-type {
     margin-bottom: 80px;
     @media (max-width: 800px) {
-      margin-bottom: 0px;
+      margin-bottom: 20px;
     }
   }
   .imgContainer {
