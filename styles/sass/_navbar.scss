@@ -17,12 +17,18 @@
   input.hamburger + label {
     display: none;
     position: fixed;
-    top: 10px;
+    top: 5px;
     right: 20px;
     color: $white-shade;
     font-size: 4rem;
     @media (max-width: 700px) {
       display: block;
+      cursor: pointer;
+      &:active,
+      &:focus,
+      &:hover {
+        color: $accent;
+      }
     }
   }
   ul {
@@ -42,8 +48,9 @@
       max-width: 70%;
       position: fixed;
       top: 50px;
-      right: 0px;
+      right: -300px;
       z-index: 30;
+      transition: all 0.3s ease;
       @include flex(nowrap, column, flex-end, start)
     }
     a {
@@ -64,4 +71,8 @@
       }
     }
   }
+}
+
+.navBar input[type="checkbox"]:checked ~ ul {
+  right: 0;
 }

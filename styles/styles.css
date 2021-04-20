@@ -492,7 +492,7 @@ aside {
   .header.blogHeader .wrapper h1,
   .header.contactHeader .wrapper h1 {
     font-size: 7rem;
-    bottom: -2rem;
+    bottom: -9rem;
   }
 }
 
@@ -543,7 +543,7 @@ aside {
 .navBar input.hamburger + label {
   display: none;
   position: fixed;
-  top: 10px;
+  top: 5px;
   right: 20px;
   color: #F6F6F6;
   font-size: 4rem;
@@ -552,6 +552,10 @@ aside {
 @media (max-width: 700px) {
   .navBar input.hamburger + label {
     display: block;
+    cursor: pointer;
+  }
+  .navBar input.hamburger + label:active, .navBar input.hamburger + label:focus, .navBar input.hamburger + label:hover {
+    color: #E4A436;
   }
 }
 
@@ -595,8 +599,10 @@ aside {
     max-width: 70%;
     position: fixed;
     top: 50px;
-    right: 0px;
+    right: -300px;
     z-index: 30;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -636,6 +642,10 @@ aside {
   .navBar ul span.logo {
     display: none;
   }
+}
+
+.navBar input[type="checkbox"]:checked ~ ul {
+  right: 0;
 }
 
 .about article {
