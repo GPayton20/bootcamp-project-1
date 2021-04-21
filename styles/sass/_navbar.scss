@@ -46,6 +46,7 @@
     @media (max-width: 900px) {
       width: 80%;
     }
+    // Restyle navigation bar to pop-out from side
     @media (max-width: 700px) {
       background-color: $pine;
       height: calc(100vh - 50px);

@@ -6,6 +6,7 @@
   justify-content: $justify;
 }
 
+// Ratio matches banner image on home page
 @mixin bannerRatio {
   flex-basis: 100%;
   height: calc(100vw / 3.2);
