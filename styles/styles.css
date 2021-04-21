@@ -540,7 +540,14 @@ aside {
 }
 
 .navBar input.hamburger {
-  opacity: 0;
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .navBar input.hamburger {
+    display: block;
+    opacity: 0;
+  }
 }
 
 .navBar input.hamburger + label {
@@ -648,7 +655,8 @@ aside {
 }
 
 .navBar input[type="checkbox"]:checked ~ ul {
-  right: 0;
+  -webkit-transform: translateX(-300px);
+          transform: translateX(-300px);
 }
 
 .navBar input.hamburger:active + label,
