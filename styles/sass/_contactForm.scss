@@ -24,6 +24,7 @@
     resize: none;
   }
   button[type="submit"] {
+    cursor: pointer;
     flex-basis: 100%;
   }
 }
