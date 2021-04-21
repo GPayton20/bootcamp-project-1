@@ -12,7 +12,8 @@
     z-index: 30;
   }
   input.hamburger {
-    display: none;
+    // display: none;
+    opacity: 0;
   }
   input.hamburger + label {
     display: none;
@@ -75,4 +76,9 @@
 
 .navBar input[type="checkbox"]:checked ~ ul {
   right: 0;
+}
+
+.navBar input.hamburger:active + label,
+.navBar input.hamburger:focus + label {
+  color: $accent;
 }

@@ -540,7 +540,7 @@ aside {
 }
 
 .navBar input.hamburger {
-  display: none;
+  opacity: 0;
 }
 
 .navBar input.hamburger + label {
@@ -649,6 +649,11 @@ aside {
 
 .navBar input[type="checkbox"]:checked ~ ul {
   right: 0;
+}
+
+.navBar input.hamburger:active + label,
+.navBar input.hamburger:focus + label {
+  color: #E4A436;
 }
 
 .about article {
