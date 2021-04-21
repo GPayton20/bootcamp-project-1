@@ -26,14 +26,11 @@
   }
   &:last-of-type {
     @media (max-width: 900px) {
-      // flex-basis: 100%;
-      // height: calc(100vw / 3.2);
       margin-top: 40px;
       @include bannerRatio;
     }
     @media (max-width: 640px) {
       margin-top: 20px;
-      // margin: 0;
     }
   }
 }

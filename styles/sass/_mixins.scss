@@ -6,13 +6,6 @@
   justify-content: $justify;
 }
 
-// todo delete if unneeded
-@mixin cutout {
-  position: relative;
-  right: 15px;
-  bottom: 15px;
-}
-
 @mixin bannerRatio {
   flex-basis: 100%;
   height: calc(100vw / 3.2);

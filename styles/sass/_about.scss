@@ -47,11 +47,9 @@
   }
 }
 
-
-
 .about .twoByTwo article {
   background-color: #fff;
-  padding: 0px 0;
+  padding: 0px 0px;
   @include flex(wrap, row, end, space-between);
   &:first-of-type {
     margin-bottom: 80px;

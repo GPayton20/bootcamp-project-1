@@ -263,7 +263,9 @@ h2,
 h3,
 h4,
 .button,
-button[type="submit"] {
+button[type="submit"],
+a.pageLink {
+  color: #1F1F1F;
   font-family: "Abril Fatface", cursive;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -277,11 +279,11 @@ h1 {
 }
 
 h2 {
-  color: #1F1F1F;
   font-size: 4.2rem;
 }
 
-h3 {
+h3,
+a.pageLink {
   font-size: 3.2rem;
 }
 
@@ -291,6 +293,7 @@ h4 {
 
 a {
   color: #345231;
+  cursor: pointer;
   text-decoration: none;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
@@ -735,7 +738,7 @@ aside {
 
 .about .twoByTwo article {
   background-color: #fff;
-  padding: 0px 0;
+  padding: 0px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
