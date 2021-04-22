@@ -100,8 +100,9 @@
   width: 70px;
   .line {
     position: relative;
+    right: -10px;
     height: 4px;
-    width: 60px;
+    width: 50px;
     background-color: $white-shade;
     border-radius: 50px;
     transition: all 0.3s ease;
@@ -126,8 +127,8 @@
 
 // Animate hamburger on click
 input:checked + label .line1 {
-  transform: rotate(-25deg) translate(-13px, 0px) scale(0.7, 0.9);
+  transform: rotate(-25deg) translate(-10px, 2px) scale(0.7, 0.9);
 }
 input:checked + label .line3 {
-  transform: rotate(25deg) translate(-13px, 0px) scale(0.7, 0.9)
+  transform: rotate(25deg) translate(-10px, -2px) scale(0.7, 0.9)
 }
