@@ -1,0 +1,18 @@
+1. Redo hamburger menu
+  - replace hidden checkbox trick with actual button
+  - on click, hamburger animates into arrow and menu slides out
+  - close menu even when a links to same page are clicked
+    - currently "about" link leaves menu open
+
+2. Error handling for contact form
+  - all inputs must have some content or form will not submit
+  - custom modal if time allows, otherwise alert
+  - regex for email?
+
+3. Modal on form submit
+  - "Thank you, {name}! Blah blah blah."
+
+4. On mobile version, navbar slides out on top of screen when user starts scrolling up
+  - has to disappear if user does not interact with it
+
+5. Image carousel for gallery section
