@@ -654,14 +654,62 @@ aside {
   }
 }
 
-.navBar input[type="checkbox"]:checked ~ ul {
+.navBar input.hamburger:checked ~ ul {
   -webkit-transform: translateX(-300px);
           transform: translateX(-300px);
 }
 
-.navBar input.hamburger:active + label,
-.navBar input.hamburger:focus + label {
-  color: #E4A436;
+@media (min-width: 701px) {
+  .navBar input.hamburger:checked ~ ul {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+.navBar input.hamburger:active + label .line,
+.navBar input.hamburger:focus + label .line {
+  background-color: #E4A436;
+}
+
+.navBar label {
+  height: 70px;
+  width: 70px;
+}
+
+.navBar label .line {
+  position: relative;
+  height: 4px;
+  width: 60px;
+  background-color: #F6F6F6;
+  border-radius: 50px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.navBar label:hover .line {
+  background-color: #E4A436;
+}
+
+.line1 {
+  top: 10px;
+}
+
+.line2 {
+  top: 20px;
+}
+
+.line3 {
+  top: 30px;
+}
+
+input:checked + label .line1 {
+  -webkit-transform: rotate(-25deg) translate(-13px, 0px) scale(0.7, 0.9);
+          transform: rotate(-25deg) translate(-13px, 0px) scale(0.7, 0.9);
+}
+
+input:checked + label .line3 {
+  -webkit-transform: rotate(25deg) translate(-13px, 0px) scale(0.7, 0.9);
+          transform: rotate(25deg) translate(-13px, 0px) scale(0.7, 0.9);
 }
 
 .about article {

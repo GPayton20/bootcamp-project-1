@@ -80,12 +80,54 @@
 }
 
 // Open side-navigation bar when invisible checkbox is checked
-.navBar input[type="checkbox"]:checked ~ ul {
+.navBar input.hamburger:checked ~ ul {
   transform: translateX(-300px);
+  // Reset menu position if browser is resized while sidebar is open
+  @media (min-width: 701px) {
+    transform: translateX(0px);
+  }
 }
 
 // Highlight hamburger icon when invisible checkbox is active so that hamburger menu can be opened by keyboard users
-.navBar input.hamburger:active + label,
-.navBar input.hamburger:focus + label {
-  color: $accent;
+.navBar input.hamburger:active + label .line,
+.navBar input.hamburger:focus + label .line {
+  background-color: $accent;
+}
+
+// Hamburger menu styling
+.navBar label {
+  height: 70px;
+  width: 70px;
+  .line {
+    position: relative;
+    height: 4px;
+    width: 60px;
+    background-color: $white-shade;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+}
+
+.navBar label:hover .line {
+  background-color: $accent;
+}  
+
+.line1 {
+  top: 10px;
+}
+
+.line2 {
+  top: 20px;
+}
+
+.line3 {
+  top: 30px;
+}
+
+// Animate hamburger on click
+input:checked + label .line1 {
+  transform: rotate(-25deg) translate(-13px, 0px) scale(0.7, 0.9);
+}
+input:checked + label .line3 {
+  transform: rotate(25deg) translate(-13px, 0px) scale(0.7, 0.9)
 }
