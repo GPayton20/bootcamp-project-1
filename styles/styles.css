@@ -1228,11 +1228,14 @@ input:checked + label .line3 {
 }
 
 .contactForm input[type="text"],
+.contactForm input[type="email"],
 .contactForm textarea {
   border: none;
 }
 
 .contactForm input[type="text"]:active, .contactForm input[type="text"]:focus,
+.contactForm input[type="email"]:active,
+.contactForm input[type="email"]:focus,
 .contactForm textarea:active,
 .contactForm textarea:focus {
   outline: 2px solid #709B6B;

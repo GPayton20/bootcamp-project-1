@@ -16,3 +16,5 @@
   - has to disappear if user does not interact with it
 
 5. Image carousel for gallery section
+
+6. Slide images in from side as the screen scrolls

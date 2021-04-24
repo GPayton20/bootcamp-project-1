@@ -1,6 +1,7 @@
 .contactForm {
   @include flex(wrap, row, center, space-between);
   input[type="text"],
+  input[type="email"],
   textarea {
     border: none;
     &:active,
