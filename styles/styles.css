@@ -540,32 +540,24 @@ aside {
   }
 }
 
-.navBar input.hamburger {
-  display: none;
-}
-
-@media (max-width: 700px) {
-  .navBar input.hamburger {
-    display: block;
-    opacity: 0;
-  }
-}
-
-.navBar input.hamburger + label {
+.navBar .hamburger {
   display: none;
   position: fixed;
   top: 5px;
   right: 20px;
+  background-color: transparent;
   color: #F6F6F6;
+  border: none;
+  outline: none;
   font-size: 4.5rem;
 }
 
 @media (max-width: 700px) {
-  .navBar input.hamburger + label {
+  .navBar .hamburger {
     display: block;
     cursor: pointer;
   }
-  .navBar input.hamburger + label:active, .navBar input.hamburger + label:focus, .navBar input.hamburger + label:hover {
+  .navBar .hamburger:active, .navBar .hamburger:focus, .navBar .hamburger:hover {
     color: #E4A436;
   }
 }
@@ -655,31 +647,31 @@ aside {
   }
 }
 
-.navBar input.hamburger:checked ~ ul {
+.navBar ul.open {
   -webkit-transform: translateX(-300px);
           transform: translateX(-300px);
 }
 
 @media (min-width: 701px) {
-  .navBar input.hamburger:checked ~ ul {
+  .navBar ul.open {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
   }
 }
 
-.navBar input.hamburger:active + label .line,
-.navBar input.hamburger:focus + label .line {
+.hamburger:active .line,
+.hamburger:focus .line {
   background-color: #E4A436;
 }
 
-.navBar label {
+.navBar .hamburger {
   height: 70px;
   width: 70px;
 }
 
-.navBar label .line {
-  position: relative;
-  right: -10px;
+.navBar .hamburger .line {
+  position: absolute;
+  left: 10px;
   height: 4px;
   width: 50px;
   background-color: #F6F6F6;
@@ -688,7 +680,7 @@ aside {
   transition: all 0.3s ease;
 }
 
-.navBar label:hover .line {
+.navBar .hamburger:hover .line {
   background-color: #E4A436;
 }
 
@@ -697,21 +689,21 @@ aside {
 }
 
 .line2 {
-  top: 20px;
+  top: 25px;
 }
 
 .line3 {
-  top: 30px;
+  top: 40px;
 }
 
-input:checked + label .line1 {
-  -webkit-transform: rotate(-25deg) translate(-10px, 2px) scale(0.7, 0.9);
-          transform: rotate(-25deg) translate(-10px, 2px) scale(0.7, 0.9);
+.hamburger.arrow .line1 {
+  -webkit-transform: rotate(-25deg) translate(-10px, 3px) scale(0.7, 0.9);
+          transform: rotate(-25deg) translate(-10px, 3px) scale(0.7, 0.9);
 }
 
-input:checked + label .line3 {
-  -webkit-transform: rotate(25deg) translate(-10px, -2px) scale(0.7, 0.9);
-          transform: rotate(25deg) translate(-10px, -2px) scale(0.7, 0.9);
+.hamburger.arrow .line3 {
+  -webkit-transform: rotate(25deg) translate(-10px, -3px) scale(0.7, 0.9);
+          transform: rotate(25deg) translate(-10px, -3px) scale(0.7, 0.9);
 }
 
 .about article {

@@ -1,0 +1,137 @@
+.navBar {
+  background-color: $pine;
+  height: 70px;
+  position: relative;
+  @include flex(wrap, row, center, center);
+  @media (max-width: 700px) {
+    height: 60px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+  }
+  // input.hamburger {
+  //   display: none;
+  //   @media (max-width: 700px) {
+  //     // Make sure invisible checkbox is not accessible until needed, otherwise user can hit accidentally and push navigation bar off the page
+  //     display: block;
+  //     opacity: 0;
+  //   }
+  // }
+  .hamburger {
+    display: none;
+    position: fixed;
+    top: 5px;
+    right: 20px;
+    background-color: transparent;
+    color: $white-shade;
+    border: none;
+    outline: none;
+    font-size: 4.5rem;
+    @media (max-width: 700px) {
+      display: block;
+      cursor: pointer;
+      &:active,
+      &:focus,
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    width: 50%;
+    @include flex(nowrap, row, center, space-between);
+    @media (max-width: 1200px) {
+      width: 70%;
+    }
+    @media (max-width: 900px) {
+      width: 80%;
+    }
+    // Restyle navigation bar to pop-out from side
+    @media (max-width: 700px) {
+      background-color: $pine;
+      height: calc(100vh - 50px);
+      width: 300px;
+      max-width: 70%;
+      position: fixed;
+      top: 50px;
+      right: -300px;
+      z-index: 30;
+      transition: all 0.3s ease;
+      @include flex(nowrap, column, flex-end, start)
+    }
+    a {
+      display: inline-block;
+      padding: 15px 10px;
+      transition: color 0.3s ease;
+      &:hover,
+      &:focus {
+        color: $accent;
+      }
+      @media (max-width: 700px) {
+        padding: 40px 20px;
+      }
+    }
+    span.logo {
+      @media (max-width: 700px) {
+        display: none;
+      }
+    }
+  }
+}
+
+// Open side-navigation bar when invisible checkbox is checked
+.navBar ul.open {
+  transform: translateX(-300px);
+  // Reset menu position if browser is resized while sidebar is open
+  @media (min-width: 701px) {
+    transform: translateX(0px);
+  }
+}
+
+// Highlight hamburger icon when invisible checkbox is active so that hamburger menu can be opened by keyboard users
+.hamburger:active .line,
+.hamburger:focus .line {
+  background-color: $accent;
+}
+
+// Hamburger menu styling
+.navBar .hamburger {
+  height: 70px;
+  width: 70px;
+  .line {
+    position: absolute;
+    left: 10px;
+    height: 4px;
+    width: 50px;
+    background-color: $white-shade;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+}
+
+.navBar .hamburger:hover .line {
+  background-color: $accent;
+}  
+
+.line1 {
+  top: 10px;
+}
+
+.line2 {
+  top: 25px;
+}
+
+.line3 {
+  top: 40px;
+}
+
+// Animate hamburger on click
+.hamburger.arrow .line1 {
+  transform: rotate(-25deg) translate(-10px, 3px) scale(0.7, 0.9);
+}
+.hamburger.arrow .line3 {
+  transform: rotate(25deg) translate(-10px, -3px) scale(0.7, 0.9)
+}
