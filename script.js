@@ -2,12 +2,21 @@ const app = {};
 
 app.init = function() {
   // Add event listener to blog section form
-  const contactForm = document.querySelector('.contactForm');
-  contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    app.validateFormInput(app.printComment);
-  })
+  // const blogSubmission = document.querySelector('.blogSubmission');
+  // blogSubmission.addEventListener('submit', (event) => {
+  //   event.preventDefault();
+  //   app.validateFormInput(app.printComment);
+  // })
+
+  // Add event listener to contact section form
+  // const contactSubmission = document.querySelector('.contactSubmission');
+  // contactSubmission.addEventListener('submit', (event) => {
+  //   event.preventDefault();
+  //   app.validateFormInput(app.sendMessage);
+  // });
+
 }
+
 
 // Functions for form submission
 
@@ -57,5 +66,14 @@ app.printComment = function(name, comment) {
 
 }
 
+// Contact message submission
+app.sendMessage = function(name) {
+  const overlay = document.querySelector('.overlay');
+  const modalText = document.querySelector('.modalMessage p');
+  
+  modalText.innerText = `Thank you, ${name}! Your message has been sent!`;
+  overlay.classList.toggle('invisible');
+}
 
-app.init();
+
+// app.init();

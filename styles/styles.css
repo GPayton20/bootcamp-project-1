@@ -324,6 +324,7 @@ button[type="submit"] {
   border: 2px solid #E4A436;
   background-color: #E4A436;
   color: #1F1F1F;
+  cursor: pointer;
   font-size: 2rem;
   letter-spacing: 1px;
   line-height: 3.2rem;
@@ -1437,6 +1438,7 @@ input:checked + label .line3 {
   min-height: 200px;
   width: 40%;
   min-width: 300px;
+  padding: 10px;
   background-color: #F6F6F6;
   color: #1F1F1F;
   -webkit-box-shadow: 15px 15px 0 #709B6B;
