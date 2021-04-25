@@ -12,12 +12,17 @@
 @import 'blogMain';
 @import 'contactForm';
 @import 'contactMain';
+@import 'overlay';
 
 // Utility classes
 .wrapper {
   width: 95%;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.invisible {
+  display: none;
 }
 
 .footer {

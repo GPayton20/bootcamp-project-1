@@ -9,6 +9,9 @@ app.init = function() {
   })
 }
 
+// Functions for form submission
+
+// General input validation
 app.validateFormInput = function(callback) {
   // Get values from inputs
   const userName = document.getElementById('name').value;
@@ -27,6 +30,7 @@ app.validateFormInput = function(callback) {
 
 }
 
+// Blog comment submission
 app.printComment = function(name, comment) {
   const newComment = document.createElement('article');
   newComment.classList.add('commentPost');
