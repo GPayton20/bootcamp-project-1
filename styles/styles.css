@@ -1407,7 +1407,7 @@ aside {
   left: 0;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1424,6 +1424,11 @@ aside {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.imageOverlay {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .modalMessage {
@@ -1450,6 +1455,30 @@ aside {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.modalImage {
+  position: relative;
+  width: 70%;
+  min-width: 310px;
+  max-width: 650px;
+  -webkit-box-shadow: 15px 15px 0 #F6F6F6;
+          box-shadow: 15px 15px 0 #F6F6F6;
+}
+
+.closeButton {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  background-color: #E4A436;
+  color: #1F1F1F;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  height: 60px;
+  width: 60px;
+  font-size: 3rem;
+  cursor: pointer;
 }
 
 .wrapper {

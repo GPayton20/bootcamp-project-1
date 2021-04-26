@@ -23,7 +23,10 @@
 }
 
 .invisible {
+  // Hide element and remove from DOM
   display: none;
+  // Allow fade in and out
+  // opacity: 0;
 }
 
 .footer {

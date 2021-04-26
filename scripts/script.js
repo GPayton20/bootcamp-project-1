@@ -1,21 +1,29 @@
 const app = {};
 
 app.init = function() {
-  // Add event listener to blog section form
-  // const blogSubmission = document.querySelector('.blogSubmission');
-  // blogSubmission.addEventListener('submit', (event) => {
-  //   event.preventDefault();
-  //   app.validateFormInput(app.printComment);
-  // })
+  // Get elements from DOM and store in variables
+  const triptych = document.querySelector('.triptych');
+  const overlay = document.querySelector('.imageOverlay');
+  const closeButton = document.querySelector('.closeButton');
+  const image = document.querySelector('.carouselImage');
+  
+  // Add event listener to gallery images
+  triptych.addEventListener('click', (event) => {
+    // Make sure user has clicked an image
+    if (event.target.src) {
+      // Change image source
+      // ! PLACEHOLDER CODE, BUILD EXTRA DIV'S AND FUNCTION TO ASSIGN IMG SRC
+      image.setAttribute('src', event.target.src);
+      overlay.classList.toggle('invisible');
+    }
+  });
 
-  // Add event listener to contact section form
-  // const contactSubmission = document.querySelector('.contactSubmission');
-  // contactSubmission.addEventListener('submit', (event) => {
-  //   event.preventDefault();
-  //   app.validateFormInput(app.sendMessage);
-  // });
-
+  // Add event listener to close button
+  closeButton.addEventListener('click', () => {
+    overlay.classList.toggle('invisible');
+  })
 }
+
 
 
 // Functions for form submission
@@ -70,10 +78,14 @@ app.printComment = function(name, comment) {
 app.sendMessage = function(name) {
   const overlay = document.querySelector('.overlay');
   const modalText = document.querySelector('.modalMessage p');
+  const okButton = document.querySelector('.clearModal');
   
   modalText.innerText = `Thank you, ${name}! Your message has been sent!`;
+  okButton.setAttribute('tabindex', '1');
+  okButton.focus();
+  
   overlay.classList.toggle('invisible');
 }
 
 
-// app.init();
+app.init();
