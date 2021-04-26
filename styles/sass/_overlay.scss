@@ -11,6 +11,7 @@
 
 .imageOverlay {
   transition: all 0.3s ease;
+  perspective: 500px;
 }
 
 .modalMessage {
@@ -45,4 +46,5 @@
   width: 60px;
   font-size: 3rem;
   cursor: pointer;
+  z-index: 200;
 }

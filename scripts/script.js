@@ -21,6 +21,7 @@ app.init = function() {
       // image.setAttribute('src', event.target.src);
       // image.setAttribute('alt', event.target.alt);
       app.buildCarousel(event.target);
+      // todo add event listener to carousel to rotate on click
       overlay.classList.toggle('invisible');
     }
   });
@@ -156,6 +157,7 @@ app.buildCarousel = (image) => {
   for (let i = 0; i < app.galleryArray.length; i++) {
     const side = document.createElement('div');
     side.classList.add(`side`, `side${i}`, `modalImage`);
+    side.setAttribute('id', i);
 
     const src = app.galleryArray[currentIndex].src;
     const alt = app.galleryArray[currentIndex].alt;
