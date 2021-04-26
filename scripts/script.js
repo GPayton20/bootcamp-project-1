@@ -7,13 +7,18 @@ app.init = function() {
   const closeButton = document.querySelector('.closeButton');
   const image = document.querySelector('.carouselImage');
   
+  // Retrieve src and alt attributes of gallery images
+  app.getImageInfo();
+  
   // Add event listener to gallery images
   triptych.addEventListener('click', (event) => {
+    console.log(event.target);
     // Make sure user has clicked an image
     if (event.target.src) {
       // Change image source
       // ! PLACEHOLDER CODE, BUILD EXTRA DIV'S AND FUNCTION TO ASSIGN IMG SRC
       image.setAttribute('src', event.target.src);
+      image.setAttribute('alt', event.target.alt);
       overlay.classList.toggle('invisible');
     }
   });
@@ -21,7 +26,14 @@ app.init = function() {
   // Add event listener to close button
   closeButton.addEventListener('click', () => {
     overlay.classList.toggle('invisible');
-  })
+  });
+
+  // Add event listener to carousel image
+  image.addEventListener('click', function() {
+    const currentIndex = (app.findIndex(this));
+    changeModalImage(this, currentIndex);
+  });
+
 }
 
 
@@ -85,6 +97,44 @@ app.sendMessage = function(name) {
   okButton.focus();
   
   overlay.classList.toggle('invisible');
+}
+
+// Functions for image carousel
+
+// Retrieve and store src and alt values from gallery image elements
+app.getImageInfo = function() {
+  const galleryImages = document.querySelectorAll('.triptych img');
+  console.log(galleryImages);
+  app.galleryArray = [];
+
+  for (const image of galleryImages) {
+    const imageData = {};
+
+    imageData.src = image.src;
+    imageData.alt = image.alt;
+
+    app.galleryArray.push(imageData);
+  }
+}
+
+// Find current image index in galleryArray
+app.findIndex = function(image) {
+  let index;
+  for (let i = 0; i < app.galleryArray.length; i++) {
+    if (app.galleryArray[i].src.includes(image.src)) {
+      index = i;
+    }
+  }
+  return index;
+}
+
+// Change modal image on click
+function changeModalImage(element, currentIndex) {
+  const nextIndex = currentIndex + 1;
+  const calculatedIndex = nextIndex % app.galleryArray.length;
+  console.log(calculatedIndex);
+
+  element.src = app.galleryArray[calculatedIndex].src;
 }
 
 
