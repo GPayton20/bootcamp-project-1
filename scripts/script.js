@@ -4,8 +4,9 @@ app.init = function() {
   // Get elements from DOM and store in variables
   const triptych = document.querySelector('.triptych');
   const overlay = document.querySelector('.imageOverlay');
-  const closeButton = document.querySelector('.closeButton');
-  const image = document.querySelector('.carouselImage');
+  const closeButtons = document.querySelectorAll('.closeButton');
+  console.log(closeButtons);
+  // const image = document.querySelector('.carouselImage');
   
   // Retrieve src and alt attributes of gallery images
   app.getImageInfo();
@@ -17,22 +18,30 @@ app.init = function() {
     if (event.target.src) {
       // Change image source
       // ! PLACEHOLDER CODE, BUILD EXTRA DIV'S AND FUNCTION TO ASSIGN IMG SRC
-      image.setAttribute('src', event.target.src);
-      image.setAttribute('alt', event.target.alt);
+      // image.setAttribute('src', event.target.src);
+      // image.setAttribute('alt', event.target.alt);
+      app.buildCarousel(event.target);
       overlay.classList.toggle('invisible');
     }
   });
 
-  // Add event listener to close button
-  closeButton.addEventListener('click', () => {
-    overlay.classList.toggle('invisible');
-  });
+  // // Add event listener to close button
+  // closeButton.addEventListener('click', () => {
+  //   overlay.classList.toggle('invisible');
+  // });
+
+  for (let button of closeButtons) {
+    button.addEventListener('click', () => {
+      console.log('hello');
+      overlay.classList.toggle('invisible');
+    });
+  }
 
   // Add event listener to carousel image
-  image.addEventListener('click', function() {
-    const currentIndex = (app.findIndex(this));
-    changeModalImage(this, currentIndex);
-  });
+  // image.addEventListener('click', function() {
+  //   const currentIndex = (app.findIndex(this));
+  //   changeModalImage(this, currentIndex);
+  // });
 
 }
 
@@ -137,5 +146,39 @@ function changeModalImage(element, currentIndex) {
   element.src = app.galleryArray[calculatedIndex].src;
 }
 
+app.buildCarousel = (image) => {
+  let currentIndex = app.findIndex(image);
+
+  const modalOverlay = document.querySelector('.imageOverlay');
+  const carousel = document.createElement('div');
+  carousel.classList.add('carousel');
+  
+  for (let i = 0; i < app.galleryArray.length; i++) {
+    const side = document.createElement('div');
+    side.classList.add(`side`, `side${i}`, `modalImage`);
+
+    const src = app.galleryArray[currentIndex].src;
+    const alt = app.galleryArray[currentIndex].alt;
+    
+    side.innerHTML = `
+    <img src=${src} alt=${alt}>
+    <button type="button" class="closeButton" onclick="app.closeModal()"><i class="fas fa-times"></i></button>
+    `;
+
+    carousel.appendChild(side);
+    currentIndex = (currentIndex + 1) % app.galleryArray.length;
+  }
+  modalOverlay.appendChild(carousel); 
+}
+
+app.closeModal = function() {
+  const overlay = document.querySelector('.imageOverlay');
+  // Hide overlay
+  overlay.classList.toggle('invisible');
+  // Remove carousel and all children from overlay
+  while (overlay.firstChild) {
+    overlay.removeChild(overlay.firstChild);
+  }
+}
 
 app.init();
