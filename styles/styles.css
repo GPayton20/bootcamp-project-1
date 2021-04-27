@@ -1499,6 +1499,8 @@ aside {
 .side {
   position: absolute;
   width: 100%;
+  -webkit-transform: translateZ(50px);
+          transform: translateZ(50px);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 }
@@ -1532,6 +1534,8 @@ aside {
   position: absolute;
   background-color: #E4A436;
   color: #1F1F1F;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   border: none;
   border-radius: 50%;
   outline: none;
@@ -1539,7 +1543,6 @@ aside {
   width: 60px;
   font-size: 3rem;
   cursor: pointer;
-  z-index: 200;
 }
 
 .closeButton {
@@ -1555,6 +1558,11 @@ aside {
 .previousPhoto {
   bottom: -30px;
   left: -20px;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .wrapper {

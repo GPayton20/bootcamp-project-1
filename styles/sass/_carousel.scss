@@ -19,7 +19,7 @@
 .side {
   position: absolute;
   width: 100%;
-  // transform: translateZ(50px);
+  transform: translateZ(50px);
   backface-visibility: hidden;
 }
 
@@ -47,6 +47,7 @@
   position: absolute;
   background-color: $accent;
   color: $black;
+  backface-visibility: hidden;
   border: none;
   border-radius: 50%;
   outline: none;
@@ -54,7 +55,7 @@
   width: 60px;
   font-size: 3rem;
   cursor: pointer;
-  z-index: 200;
+  // z-index: 200;
 }
 
 .closeButton {
@@ -70,4 +71,9 @@
 .previousPhoto {
   bottom: -30px;
   left: -20px;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }

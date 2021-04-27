@@ -166,7 +166,7 @@ app.buildCarousel = (image) => {
     <img src=${src} alt=${alt}>
     <button type="button" class="photoButton closeButton" onclick="app.closeModal()"><i class="fas fa-times"></i></button>
     <button type="button" class="photoButton nextPhoto" onclick="app.nextPhoto()"><i class="fas fa-arrow-right"></i></button>
-    <button type="button" class="photoButton previousPhoto" onclick="app.previousPhoto()"><i class="fas fa-arrow-left"></i></button>
+    <button type="button" class="photoButton previousPhoto disabled" onclick="app.previousPhoto()"><i class="fas fa-arrow-left"></i></button>
     `;
 
     carousel.appendChild(side);
@@ -184,6 +184,46 @@ app.closeModal = function() {
   // Remove carousel and all children from overlay
   while (overlay.firstChild) {
     overlay.removeChild(overlay.firstChild);
+  }
+}
+
+app.nextPhoto = function() {
+  const carousel = document.querySelector('.carousel');
+  const nextPhotoButtons = document.querySelectorAll('.nextPhoto')
+  const previousPhotoButtons = document.querySelectorAll('.previousPhoto')
+  if (carousel.classList.contains('sideVisible-0')) {
+    carousel.classList.remove('sideVisible-0');
+    carousel.classList.add('sideVisible-1');
+    for (let button of previousPhotoButtons) {
+      button.classList.remove('disabled');
+    }
+  } else
+  if (carousel.classList.contains('sideVisible-1')) {
+    carousel.classList.remove('sideVisible-1');
+    carousel.classList.add('sideVisible-2');
+    for (let button of nextPhotoButtons) {
+      button.classList.add('disabled');
+    }
+  }
+}
+
+app.previousPhoto = function() {
+  const carousel = document.querySelector('.carousel');
+  const nextPhotoButtons = document.querySelectorAll('.nextPhoto')
+  const previousPhotoButtons = document.querySelectorAll('.previousPhoto')
+  if (carousel.classList.contains('sideVisible-2')) {
+    carousel.classList.remove('sideVisible-2');
+    carousel.classList.add('sideVisible-1');
+    for (let button of nextPhotoButtons) {
+      button.classList.remove('disabled');
+    }
+  } else
+  if (carousel.classList.contains('sideVisible-1')) {
+    carousel.classList.remove('sideVisible-1');
+    carousel.classList.add('sideVisible-0');
+    for (let button of previousPhotoButtons) {
+      button.classList.add('disabled');
+    }
   }
 }
 
