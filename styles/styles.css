@@ -1467,26 +1467,11 @@ aside {
           box-shadow: 15px 15px 0 #F6F6F6;
 }
 
-.closeButton {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  background-color: #E4A436;
-  color: #1F1F1F;
-  border: none;
-  border-radius: 50%;
-  outline: none;
-  height: 60px;
-  width: 60px;
-  font-size: 3rem;
-  cursor: pointer;
-  z-index: 200;
-}
-
 .carousel {
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
   position: relative;
+  left: -2%;
   -webkit-transition: -webkit-transform 2s ease-out;
   transition: -webkit-transform 2s ease-out;
   transition: transform 2s ease-out;
@@ -1495,6 +1480,20 @@ aside {
           transform-style: preserve-3d;
   -webkit-transform-origin: center calc(50% - 15px) -150px;
           transform-origin: center calc(50% - 15px) -150px;
+}
+
+@media (max-width: 700px) {
+  .carousel {
+    height: 450px;
+    width: 450px;
+  }
+}
+
+@media (max-width: 525px) {
+  .carousel {
+    height: 300px;
+    width: 300px;
+  }
 }
 
 .side {
@@ -1529,11 +1528,33 @@ aside {
           transform: rotateY(-240deg);
 }
 
+.photoButton {
+  position: absolute;
+  background-color: #E4A436;
+  color: #1F1F1F;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  height: 60px;
+  width: 60px;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.closeButton {
+  top: -20px;
+  left: -20px;
+}
+
 .nextPhoto {
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
-  margin-top: 50px;
+  bottom: -30px;
+  right: -30px;
+}
+
+.previousPhoto {
+  bottom: -30px;
+  left: -20px;
 }
 
 .wrapper {

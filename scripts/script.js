@@ -5,7 +5,7 @@ app.init = function() {
   const triptych = document.querySelector('.triptych');
   const overlay = document.querySelector('.imageOverlay');
   const closeButtons = document.querySelectorAll('.closeButton');
-  const nextPhoto = document.querySelector('.nextPhoto');
+  // const nextPhoto = document.querySelector('.nextPhoto');
   // const image = document.querySelector('.carouselImage');
   
   // Retrieve src and alt attributes of gallery images
@@ -21,19 +21,19 @@ app.init = function() {
     }
   });
 
-  nextPhoto.addEventListener('click', () => {
-    const carousel = document.querySelector('.carousel');
-    if (carousel.classList.contains('sideVisible-0')) {
-      carousel.classList.remove('sideVisible-0');
-      carousel.classList.add('sideVisible-1');
-    } else if (carousel.classList.contains('sideVisible-1')) {
-      carousel.classList.remove('sideVisible-1');
-      carousel.classList.add('sideVisible-2');
-    } else if (carousel.classList.contains('sideVisible-2')) {
-      carousel.classList.remove('sideVisible-2');
-      carousel.classList.add('sideVisible-0');
-    }
-  });
+  // nextPhoto.addEventListener('click', () => {
+  //   const carousel = document.querySelector('.carousel');
+  //   if (carousel.classList.contains('sideVisible-0')) {
+  //     carousel.classList.remove('sideVisible-0');
+  //     carousel.classList.add('sideVisible-1');
+  //   } else if (carousel.classList.contains('sideVisible-1')) {
+  //     carousel.classList.remove('sideVisible-1');
+  //     carousel.classList.add('sideVisible-2');
+  //   } else if (carousel.classList.contains('sideVisible-2')) {
+  //     carousel.classList.remove('sideVisible-2');
+  //     carousel.classList.add('sideVisible-0');
+  //   }
+  // });
 
   for (let button of closeButtons) {
     button.addEventListener('click', () => {
@@ -164,7 +164,9 @@ app.buildCarousel = (image) => {
     
     side.innerHTML = `
     <img src=${src} alt=${alt}>
-    <button type="button" class="closeButton" onclick="app.closeModal()"><i class="fas fa-times"></i></button>
+    <button type="button" class="photoButton closeButton" onclick="app.closeModal()"><i class="fas fa-times"></i></button>
+    <button type="button" class="photoButton nextPhoto" onclick="app.nextPhoto()"><i class="fas fa-arrow-right"></i></button>
+    <button type="button" class="photoButton previousPhoto" onclick="app.previousPhoto()"><i class="fas fa-arrow-left"></i></button>
     `;
 
     carousel.appendChild(side);
@@ -176,12 +178,12 @@ app.buildCarousel = (image) => {
 // Hide modal and remove carousel from DOM so a new one can be constructed on next click
 app.closeModal = function() {
   const overlay = document.querySelector('.imageOverlay');
-  const nextPhoto = document.querySelector('.nextPhoto');
+  // const nextPhoto = document.querySelector('.nextPhoto');
   // Hide overlay
   overlay.classList.toggle('invisible');
   // Remove carousel and all children from overlay
-  while (overlay.lastChild != nextPhoto) {
-    overlay.removeChild(overlay.lastChild);
+  while (overlay.firstChild) {
+    overlay.removeChild(overlay.firstChild);
   }
 }
 

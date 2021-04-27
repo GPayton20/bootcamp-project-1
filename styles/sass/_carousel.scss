@@ -1,10 +1,19 @@
 .carousel {
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
   position: relative;
+  left: -2%;
   transition: transform 2s ease-out;
   transform-style: preserve-3d;
   transform-origin: center calc(50% - 15px) -150px;
+  @media (max-width: 700px) {
+    height: 450px;
+    width: 450px;
+  }
+  @media (max-width: 525px) {
+    height: 300px;
+    width: 300px;
+  }
 }
 
 .side {
@@ -34,7 +43,31 @@
   transform: rotateY(-240deg);
 }
 
+.photoButton {
+  position: absolute;
+  background-color: $accent;
+  color: $black;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  height: 60px;
+  width: 60px;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.closeButton {
+  top: -20px;
+  left: -20px;
+}
+
 .nextPhoto {
-  order: 2;
-  margin-top: 50px;
+  bottom: -30px;
+  right: -30px;
+}
+
+.previousPhoto {
+  bottom: -30px;
+  left: -20px;
 }

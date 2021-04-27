@@ -33,18 +33,4 @@
   box-shadow: 15px 15px 0 $white-shade;
 }
 
-.closeButton {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  background-color: $accent;
-  color: $black;
-  border: none;
-  border-radius: 50%;
-  outline: none;
-  height: 60px;
-  width: 60px;
-  font-size: 3rem;
-  cursor: pointer;
-  z-index: 200;
-}
+
