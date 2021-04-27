@@ -2,7 +2,7 @@
   height: 500px;
   width: 500px;
   position: relative;
-  transition: transform 4s ease-out;
+  transition: transform 2s ease-out;
   transform-style: preserve-3d;
   transform-origin: center calc(50% - 15px) -150px;
 }
@@ -27,9 +27,14 @@
 }
 
 .sideVisible-1 {
-  transform: rotateY(120deg);
+  transform: rotateY(-120deg);
 }
 
 .sideVisible-2 {
-  transform: rotateY(240deg);
+  transform: rotateY(-240deg);
+}
+
+.nextPhoto {
+  order: 2;
+  margin-top: 50px;
 }

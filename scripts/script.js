@@ -5,7 +5,7 @@ app.init = function() {
   const triptych = document.querySelector('.triptych');
   const overlay = document.querySelector('.imageOverlay');
   const closeButtons = document.querySelectorAll('.closeButton');
-  console.log(closeButtons);
+  const nextPhoto = document.querySelector('.nextPhoto');
   // const image = document.querySelector('.carouselImage');
   
   // Retrieve src and alt attributes of gallery images
@@ -13,23 +13,27 @@ app.init = function() {
   
   // Add event listener to gallery images
   triptych.addEventListener('click', (event) => {
-    console.log(event.target);
     // Make sure user has clicked an image
     if (event.target.src) {
-      // Change image source
-      // ! PLACEHOLDER CODE, BUILD EXTRA DIV'S AND FUNCTION TO ASSIGN IMG SRC
-      // image.setAttribute('src', event.target.src);
-      // image.setAttribute('alt', event.target.alt);
       app.buildCarousel(event.target);
-      // todo add event listener to carousel to rotate on click
+
       overlay.classList.toggle('invisible');
     }
   });
 
-  // // Add event listener to close button
-  // closeButton.addEventListener('click', () => {
-  //   overlay.classList.toggle('invisible');
-  // });
+  nextPhoto.addEventListener('click', () => {
+    const carousel = document.querySelector('.carousel');
+    if (carousel.classList.contains('sideVisible-0')) {
+      carousel.classList.remove('sideVisible-0');
+      carousel.classList.add('sideVisible-1');
+    } else if (carousel.classList.contains('sideVisible-1')) {
+      carousel.classList.remove('sideVisible-1');
+      carousel.classList.add('sideVisible-2');
+    } else if (carousel.classList.contains('sideVisible-2')) {
+      carousel.classList.remove('sideVisible-2');
+      carousel.classList.add('sideVisible-0');
+    }
+  });
 
   for (let button of closeButtons) {
     button.addEventListener('click', () => {
@@ -37,12 +41,6 @@ app.init = function() {
       overlay.classList.toggle('invisible');
     });
   }
-
-  // Add event listener to carousel image
-  // image.addEventListener('click', function() {
-  //   const currentIndex = (app.findIndex(this));
-  //   changeModalImage(this, currentIndex);
-  // });
 
 }
 
@@ -109,6 +107,8 @@ app.sendMessage = function(name) {
   overlay.classList.toggle('invisible');
 }
 
+
+
 // Functions for image carousel
 
 // Retrieve and store src and alt values from gallery image elements
@@ -138,26 +138,26 @@ app.findIndex = function(image) {
   return index;
 }
 
-// Change modal image on click
-function changeModalImage(element, currentIndex) {
-  const nextIndex = currentIndex + 1;
-  const calculatedIndex = nextIndex % app.galleryArray.length;
-  console.log(calculatedIndex);
+// // Change modal image on click
+// function changeModalImage(element, currentIndex) {
+//   const nextIndex = currentIndex + 1;
+//   const calculatedIndex = nextIndex % app.galleryArray.length;
+//   console.log(calculatedIndex);
 
-  element.src = app.galleryArray[calculatedIndex].src;
-}
+//   element.src = app.galleryArray[calculatedIndex].src;
+// }
 
+// Build 3D carousel with clicked image facing forward
 app.buildCarousel = (image) => {
   let currentIndex = app.findIndex(image);
 
   const modalOverlay = document.querySelector('.imageOverlay');
   const carousel = document.createElement('div');
-  carousel.classList.add('carousel');
+  carousel.classList.add('carousel', 'sideVisible-0');
   
   for (let i = 0; i < app.galleryArray.length; i++) {
     const side = document.createElement('div');
     side.classList.add(`side`, `side${i}`, `modalImage`);
-    side.setAttribute('id', i);
 
     const src = app.galleryArray[currentIndex].src;
     const alt = app.galleryArray[currentIndex].alt;
@@ -173,14 +173,19 @@ app.buildCarousel = (image) => {
   modalOverlay.appendChild(carousel); 
 }
 
+// Hide modal and remove carousel from DOM so a new one can be constructed on next click
 app.closeModal = function() {
   const overlay = document.querySelector('.imageOverlay');
+  const nextPhoto = document.querySelector('.nextPhoto');
   // Hide overlay
   overlay.classList.toggle('invisible');
   // Remove carousel and all children from overlay
-  while (overlay.firstChild) {
-    overlay.removeChild(overlay.firstChild);
+  while (overlay.lastChild != nextPhoto) {
+    overlay.removeChild(overlay.lastChild);
   }
 }
+
+
+
 
 app.init();
