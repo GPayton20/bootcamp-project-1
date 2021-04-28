@@ -207,8 +207,8 @@ app.previousPhoto = function() {
 
 // Functions for intersection observer
 // Research and inspiration from: 
-  https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API,
-  https://www.youtube.com/watch?v=gQ8WggeHoJU
+  // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API,
+  // https://www.youtube.com/watch?v=gQ8WggeHoJU
 
   // I was originally using getBoundingClientRect() for this, allowing the images to stop sliding when the user stops scrolling. But on furthur research I saw lots of discussion about layout thrashing and CPU overloading. I don't now if any of that was really a problem with my functions the way I wrote them, but just in case I used this method instead.
 
