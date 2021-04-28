@@ -132,14 +132,14 @@ app.buildCarousel = (image) => {
   const modalOverlay = document.querySelector('.imageOverlay');
   const carousel = document.createElement('div');
   carousel.classList.add('carousel', 'sideVisible-0');
-  
+  // Build one side of carousel for each image in gallery
   for (let i = 0; i < app.galleryArray.length; i++) {
     const side = document.createElement('div');
     side.classList.add(`side`, `side${i}`, `modalImage`);
 
     const src = app.galleryArray[currentIndex].src;
     const alt = app.galleryArray[currentIndex].alt;
-    
+    // Add image src and alt attributes, close and rotate buttons, and classes for styling and functionality
     side.innerHTML = `
     <img src=${src} alt=${alt}>
     <button type="button" class="photoButton closeButton" onclick="app.closeModal()"><i class="fas fa-times"></i></button>
