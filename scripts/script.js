@@ -215,6 +215,7 @@ app.previousPhoto = function() {
   // I experienced some bugs when using the mobile screen emulators in dev tools, but not when the window was manually resized.
 
 app.buildIntersectionObserver = () => {
+  // Observer covers viewport, observed images trigger callback function when they have passed 20% into/out of viewport
   app.options = {
     root: null,
     rootMargin: '0px',
@@ -232,6 +233,7 @@ app.buildIntersectionObserver = () => {
 
 app.slideOut = (entries) => {
   entries.forEach(entry => {
+    // Slide image into view as it enters observer threshold, back out as it exits
     if (entry.isIntersecting) {
       entry.target.classList.add('slideOut');
     } else {
