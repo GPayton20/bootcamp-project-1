@@ -5,11 +5,12 @@ app.init = function() {
   const triptych = document.querySelector('.triptych');
   const overlay = document.querySelector('.imageOverlay');
   const closeButtons = document.querySelectorAll('.closeButton');
-  // const nextPhoto = document.querySelector('.nextPhoto');
-  // const image = document.querySelector('.carouselImage');
   
   // Retrieve src and alt attributes of gallery images
   app.getImageInfo();
+
+  // Set up intersection observer for about section images
+  app.buildIntersectionObserver();
   
   // Add event listener to gallery images
   triptych.addEventListener('click', (event) => {
@@ -21,28 +22,14 @@ app.init = function() {
     }
   });
 
-  // nextPhoto.addEventListener('click', () => {
-  //   const carousel = document.querySelector('.carousel');
-  //   if (carousel.classList.contains('sideVisible-0')) {
-  //     carousel.classList.remove('sideVisible-0');
-  //     carousel.classList.add('sideVisible-1');
-  //   } else if (carousel.classList.contains('sideVisible-1')) {
-  //     carousel.classList.remove('sideVisible-1');
-  //     carousel.classList.add('sideVisible-2');
-  //   } else if (carousel.classList.contains('sideVisible-2')) {
-  //     carousel.classList.remove('sideVisible-2');
-  //     carousel.classList.add('sideVisible-0');
-  //   }
-  // });
-
+  // Add event listeners to close buttons on carousel images
   for (let button of closeButtons) {
     button.addEventListener('click', () => {
-      console.log('hello');
       overlay.classList.toggle('invisible');
     });
   }
-
 }
+
 
 
 
@@ -110,11 +97,11 @@ app.sendMessage = function(name) {
 
 
 // Functions for image carousel
+// Research and inspiration from: https://3dtransforms.desandro.com/perspective
 
 // Retrieve and store src and alt values from gallery image elements
 app.getImageInfo = function() {
   const galleryImages = document.querySelectorAll('.triptych img');
-  console.log(galleryImages);
   app.galleryArray = [];
 
   for (const image of galleryImages) {
@@ -137,15 +124,6 @@ app.findIndex = function(image) {
   }
   return index;
 }
-
-// // Change modal image on click
-// function changeModalImage(element, currentIndex) {
-//   const nextIndex = currentIndex + 1;
-//   const calculatedIndex = nextIndex % app.galleryArray.length;
-//   console.log(calculatedIndex);
-
-//   element.src = app.galleryArray[calculatedIndex].src;
-// }
 
 // Build 3D carousel with clicked image facing forward
 app.buildCarousel = (image) => {
@@ -178,7 +156,6 @@ app.buildCarousel = (image) => {
 // Hide modal and remove carousel from DOM so a new one can be constructed on next click
 app.closeModal = function() {
   const overlay = document.querySelector('.imageOverlay');
-  // const nextPhoto = document.querySelector('.nextPhoto');
   // Hide overlay
   overlay.classList.toggle('invisible');
   // Remove carousel and all children from overlay
@@ -229,17 +206,33 @@ app.previousPhoto = function() {
 
 
 // Functions for intersection observer
-let options = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.2
+// Research and inspiration from: 
+  https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API,
+  https://www.youtube.com/watch?v=gQ8WggeHoJU
+
+  // I was originally using getBoundingClientRect() for this, allowing the images to stop sliding when the user stops scrolling. But on furthur research I saw lots of discussion about layout thrashing and CPU overloading. I don't now if any of that was really a problem with my functions the way I wrote them, but just in case I used this method instead.
+
+  // I experienced some bugs when using the mobile screen emulators in dev tools, but not when the window was manually resized.
+
+app.buildIntersectionObserver = () => {
+  app.options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+  }
+
+  app.observer = new IntersectionObserver(app.slideOut, app.options);
+
+  app.slidingImages = document.querySelectorAll('.twoByTwo .imgContainer');
+
+  app.slidingImages.forEach(image => {
+    app.observer.observe(image);
+  });
 }
 
-const slideOut = (entries, observer) => {
+app.slideOut = (entries) => {
   entries.forEach(entry => {
-    console.log(entry.target);
     if (entry.isIntersecting) {
-      console.log('Yup');
       entry.target.classList.add('slideOut');
     } else {
       entry.target.classList.remove('slideOut');
@@ -247,17 +240,9 @@ const slideOut = (entries, observer) => {
   });
 }
 
-let observer = new IntersectionObserver(slideOut, options);
-
-const slidingImages = document.querySelectorAll('.twoByTwo .imgContainer');
-
-slidingImages.forEach(image => {
-  observer.observe(image);
-});
-
-
-
-
 
 
 app.init();
+
+
+

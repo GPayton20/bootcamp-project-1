@@ -955,6 +955,7 @@ aside {
 }
 
 .gallery .oneThird {
+  cursor: pointer;
   -ms-flex-preferred-size: calc( (100% - 80px) / 3);
       flex-basis: calc( (100% - 80px) / 3);
 }
@@ -1491,10 +1492,10 @@ aside {
   width: 600px;
   position: relative;
   left: -2%;
-  -webkit-transition: -webkit-transform 2s ease-out;
-  transition: -webkit-transform 2s ease-out;
-  transition: transform 2s ease-out;
-  transition: transform 2s ease-out, -webkit-transform 2s ease-out;
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transform-origin: center calc(50% - 15px) -150px;
