@@ -30,6 +30,10 @@
   // opacity: 0;
 }
 
+.slideOut {
+  transform: translateX(0px);
+}
+
 .footer {
   span {
     background-color: $black;

@@ -228,6 +228,36 @@ app.previousPhoto = function() {
 }
 
 
+// Functions for intersection observer
+let options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.2
+}
+
+const slideOut = (entries, observer) => {
+  entries.forEach(entry => {
+    console.log(entry.target);
+    if (entry.isIntersecting) {
+      console.log('Yup');
+      entry.target.classList.add('slideOut');
+    } else {
+      entry.target.classList.remove('slideOut');
+    }
+  });
+}
+
+let observer = new IntersectionObserver(slideOut, options);
+
+const slidingImages = document.querySelectorAll('.twoByTwo .imgContainer');
+
+slidingImages.forEach(image => {
+  observer.observe(image);
+});
+
+
+
+
 
 
 app.init();

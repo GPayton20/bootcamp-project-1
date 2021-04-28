@@ -36,6 +36,7 @@
   .imgContainer {
     position: relative;
     flex-basis: 50%;
+    transition: transform 0.8s ease-in-out;
     @media (max-width: 800px) {
       flex-basis: 100%;
     }
@@ -81,6 +82,14 @@
       }
     }
   }
+}
+
+.imgLeft {
+  transform: translateX(-80%);
+}
+
+.imgRight {
+  transform: translateX(80%);
 }
 
 // Willow's Journey
